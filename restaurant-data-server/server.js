@@ -13,9 +13,14 @@ app.get("/health", (req, res) => {
 });
 
 app.get("/discovery/uk/restaurants/enriched/bypostcode/EC4M7RF", async (req, res) => {
-    const response = await fetch("https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/EC4M7RF");
-    const data = await response.json();
-    res.json(data);
+    try {
+        const response = await fetch("https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/EC4M7RF");
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error("Error fetching data:", error)
+        res.status(500).json({error: "Failed to fetch data"})
+    }
 });
 
 if (require.main === module) {

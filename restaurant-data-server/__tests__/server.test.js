@@ -1,6 +1,6 @@
 const request = require("supertest");
 const app = require("../server");
-const { describe, test, expect, beforeEach} = require("@jest/globals");
+const { describe, test, expect, beforeEach, afterEach} = require("@jest/globals");
 
 const mockData = {
     restaurants: [
@@ -47,7 +47,7 @@ describe("Implementing the API logic", () => {
         global.fetch = jest.fn();
     })
 
-    afterEach(() => {
+    afterEach( () => {
         jest.restoreAllMocks()
     })
 
@@ -64,6 +64,15 @@ describe("Implementing the API logic", () => {
 
         expect(res.status).toBe(200)
         expect(res.body).toEqual(mockData)
+    })
+
+    test("Should return 500 if the fetch fails", async () => {
+        fetch.mockRejectedValueOnce(new Error("Fetch error"))
+
+        const response = await request(app).get("/discovery/uk/restaurants/enriched/bypostcode/EC4M7RF")
+
+        expect(response.status).toBe(500)
+        expect(response.body).toEqual({ error: "Failed to fetch data"})
     })
 })
 
