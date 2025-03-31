@@ -12,10 +12,12 @@
   },
   "dependencies": {
     "@testing-library/jest-dom": "^6.6.3",
+    "axios": "^1.8.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@mswjs/interceptors": "^0.38.0",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
     "@vitejs/plugin-react": "^4.3.4",
@@ -23,6 +25,7 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "jsdom": "^26.0.0",
+    "msw": "^2.7.3",
     "vite": "^6.2.0",
     "vitest": "^3.0.9"
   }
