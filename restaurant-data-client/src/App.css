@@ -4,3 +4,10 @@
   padding: 2rem;
   text-align: center;
 }
+
+.restaurant-container {
+  display: grid;
+  grid-template-columns: 280px 280px;
+  gap: 50px;
+  justify-content: center;
+}
