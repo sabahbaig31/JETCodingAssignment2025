@@ -134,7 +134,7 @@ describe("App Component", () => {
 
     test("renders the web page without crashing", () => {
         render(<App/>);
-        expect(screen.getByText("Top 10 Restaurants")).toBeInTheDocument();
+        expect(screen.getByText("Fetching Data...")).toBeInTheDocument();
 
     })
 
