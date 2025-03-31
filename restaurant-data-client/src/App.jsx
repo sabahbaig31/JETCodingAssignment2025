@@ -20,21 +20,23 @@ function App() {
         fetchAPI()
     }, []);
 
-  return (
-    <>
-      <h1>Top 10 Restaurants</h1>
-        {
-            restaurantData.slice(0,10).map((restaurant) => (
-                <div key={restaurant.id} data-testid={'restaurant-item'}>
-                    <p>{restaurant.name}</p>
-                    <p>{restaurant.address.firstLine}, {restaurant.address.postalCode}</p>
-                    <p>Cuisines: {restaurant.cuisines[0].name}, {restaurant.cuisines[1].name}</p>
-                    <p>Rating: {restaurant.rating.starRating}</p>
-                </div>
-            ))
-        }
-    </>
-  )
+    return (
+        <>
+            <h1>Top 10 Restaurants</h1>
+            <div className="restaurant-container">
+            {
+                restaurantData.slice(0,10).map((restaurant) => (
+                    <div key={restaurant.id} data-testid={'restaurant-item'} className="restaurant-card">
+                        <p>{restaurant.name}</p>
+                        <p>{restaurant.address.firstLine}, {restaurant.address.postalCode}</p>
+                        <p>Cuisines: {restaurant.cuisines[0].name}, {restaurant.cuisines[1].name}</p>
+                        <p>Rating: {restaurant.rating.starRating}</p>
+                    </div>
+                ))
+            }
+            </div>
+        </>
+    )
 }
 
 export default App
