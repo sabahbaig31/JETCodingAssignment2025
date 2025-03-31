@@ -1,3 +1,8 @@
+body {
+  background-color: white;
+  color: #242E30;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -16,15 +21,30 @@
   display: grid;
   grid-template-columns: auto auto;
   gap: 10px;
-  background-color: #EFEDEA;
+  background-color: #ffffff;
   border-radius: 20px;
-  box-shadow: 0 4px 9px #FF8000;
+  box-shadow: 0 4px 9px #242E30;
   color: #242E30;
 }
 
 .restaurant-card .restaurant-info {
   display: grid;
   padding: 10px;
+}
+
+.restaurant-card p:first-child {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.restaurant-card p:last-child {
+  font-weight: bold;
+  color: #F75E28;
+}
+
+.restaurant-card p {
+  font-size: smaller;
+  margin: 5px;
 }
 
 .restaurant-card .restaurant-logo {
