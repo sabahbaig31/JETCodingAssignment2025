@@ -8,7 +8,7 @@ A web app that fetches and displays the top 10 restaurants based on the postcode
 ### Prerequisites:
 * Ensure Node.js is installed on your machine
 * Install npm (Node Package Manager) along with Node.js
-* Ensure that port **8080** (backend) and port **5173** are not in use before running the application.
+* Ensure that port **8080** (backend) and port **5173** (frontend) are not in use before running the application.
 * If these ports are occupied, please stop any processes using them.
 
 ## Running the project
