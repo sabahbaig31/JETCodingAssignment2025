@@ -15,7 +15,11 @@ const mockRestaurants = [
     {
         name: "Al-Baik Pizza",
         // Only displaying first 2 cuisines from each restaurant
-        cuisines: [{ name: "Pizza" }, { name: "American "}]
+        cuisines: [{ name: "Pizza" }, { name: "American "}],
+        address: {
+            firstLine: "111 Kennington Road",
+            postalCode: "SE11 6SF"
+        }
     }
 ];
 
@@ -46,6 +50,14 @@ describe("App Component", () => {
 
         await waitFor(() => {
             expect(screen.getByText("Cuisines: Pizza, American")).toBeInTheDocument();
+        });
+    });
+
+    test("displays restaurant address", async () => {
+        render(<App />);
+
+        await waitFor(() => {
+            expect(screen.getByText("111 Kennington Road, SE11 6SF")).toBeInTheDocument();
         });
     });
 
