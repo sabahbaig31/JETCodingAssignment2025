@@ -11,3 +11,10 @@
   gap: 50px;
   justify-content: center;
 }
+
+.restaurant-card {
+  background-color: #EFEDEA;
+  border-radius: 20px;
+  box-shadow: 0 4px 9px #FF8000;
+  color: #242E30;
+}
