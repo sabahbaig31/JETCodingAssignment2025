@@ -24,8 +24,8 @@ function App() {
     <>
       <h1>Top 10 Restaurants</h1>
         {
-            restaurantData.map((restaurant) => (
-                <div key={restaurant.id}>
+            restaurantData.slice(0,10).map((restaurant) => (
+                <div key={restaurant.id} data-testid={'restaurant-item'}>
                     <p>{restaurant.name}</p>
                     <p>{restaurant.address.firstLine}, {restaurant.address.postalCode}</p>
                     <p>Cuisines: {restaurant.cuisines[0].name}, {restaurant.cuisines[1].name}</p>

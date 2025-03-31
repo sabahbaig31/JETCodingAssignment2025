@@ -23,6 +23,105 @@ const mockRestaurants = [
         rating: {
             starRating: 4.3
         }
+    },
+    {
+        name: "Restaurant 2",
+        cuisines: [{ name: "Cuisine 1" }, { name: "Cuisine 2"}],
+        address: {
+            firstLine: "Road 2",
+            postalCode: "RSTR NT2"
+        },
+        rating: {
+            starRating: 5
+        }
+    },
+    {
+        name: "Restaurant 3",
+        cuisines: [{ name: "Cuisine 1" }, { name: "Cuisine 2"}],
+        address: {
+            firstLine: "Road 3",
+            postalCode: "RSTR NT3"
+        },
+        rating: {
+            starRating: 5
+        }
+    },
+    {
+        name: "Restaurant 4",
+        cuisines: [{ name: "Cuisine 1" }, { name: "Cuisine 2"}],
+        address: {
+            firstLine: "Road 4",
+            postalCode: "RSTR NT4"
+        },
+        rating: {
+            starRating: 5
+        }
+    },
+    {
+        name: "Restaurant 5",
+        cuisines: [{ name: "Cuisine 1" }, { name: "Cuisine 2"}],
+        address: {
+            firstLine: "Road 5",
+            postalCode: "RSTR NT5"
+        },
+        rating: {
+            starRating: 5
+        }
+    },
+    {
+        name: "Restaurant 6",
+        cuisines: [{ name: "Cuisine 1" }, { name: "Cuisine 2"}],
+        address: {
+            firstLine: "Road 6",
+            postalCode: "RSTR NT6"
+        },
+        rating: {
+            starRating: 5
+        }
+    },
+    {
+        name: "Restaurant 7",
+        cuisines: [{ name: "Cuisine 1" }, { name: "Cuisine 2"}],
+        address: {
+            firstLine: "Road 7",
+            postalCode: "RSTR NT7"
+        },
+        rating: {
+            starRating: 5
+        }
+    },
+    {
+        name: "Restaurant 8",
+        cuisines: [{ name: "Cuisine 1" }, { name: "Cuisine 2"}],
+        address: {
+            firstLine: "Road 8",
+            postalCode: "RSTR NT8"
+        },
+        rating: {
+            starRating: 5
+        }
+    },
+    {
+        name: "Restaurant 9",
+        cuisines: [{ name: "Cuisine 1" }, { name: "Cuisine 2"}],
+        address: {
+            firstLine: "Road 9",
+            postalCode: "RSTR NT9"
+        },
+        rating: {
+            starRating: 5
+        }
+    },
+    {
+        name: "Restaurant 0",
+        cuisines: [{ name: "Cuisine 1" }, { name: "Cuisine 2"}],
+        address: {
+            firstLine: "Road 0",
+            postalCode: "RSTR NT0"
+        },
+        rating: {
+            starRating: 5
+        }
     }
 ];
 
@@ -72,5 +171,13 @@ describe("App Component", () => {
         });
     });
 
+    test("limits results to 10 restaurants", async () => {
+        render(<App />);
+
+        await waitFor(() => {
+            const restaurantDataItems = screen.getAllByTestId("restaurant-item")
+            expect(restaurantDataItems.length).toBe(10);
+        });
+    });
 
 });
