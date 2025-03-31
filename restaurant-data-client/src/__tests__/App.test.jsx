@@ -19,6 +19,9 @@ const mockRestaurants = [
         address: {
             firstLine: "111 Kennington Road",
             postalCode: "SE11 6SF"
+        },
+        rating: {
+            starRating: 4.3
         }
     }
 ];
@@ -60,5 +63,14 @@ describe("App Component", () => {
             expect(screen.getByText("111 Kennington Road, SE11 6SF")).toBeInTheDocument();
         });
     });
+
+    test("displays restaurant rating", async () => {
+        render(<App />);
+
+        await waitFor(() => {
+            expect(screen.getByText("Rating: 4.3")).toBeInTheDocument();
+        });
+    });
+
 
 });
