@@ -5,6 +5,7 @@ import axios from "axios";
 function App() {
 
     const [restaurantData, setRestaurantData] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     const fetchAPI = async () => {
         try {
@@ -13,12 +14,18 @@ function App() {
             console.log(response.data.restaurants)
         } catch (error) {
             console.error('Error fetching data:', error);
+        } finally {
+            setIsLoading(false)
         }
     }
 
     useEffect(() => {
         fetchAPI()
     }, []);
+
+    if (isLoading) {
+        return <p className="loading-text">Fetching Data...</p>
+    }
 
     return (
         <>

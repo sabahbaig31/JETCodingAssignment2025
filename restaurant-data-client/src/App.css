@@ -68,3 +68,8 @@ header {
   align-self: center;
   padding: 10px;
 }
+
+.loading-text {
+  font-size: x-large;
+  font-weight: bold;
+}
