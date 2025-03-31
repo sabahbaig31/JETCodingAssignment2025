@@ -27,6 +27,7 @@ function App() {
             restaurantData.map((restaurant) => (
                 <div key={restaurant.id}>
                     <p>{restaurant.name}</p>
+                    <p>Cuisines: {restaurant.cuisines[0].name}, {restaurant.cuisines[1].name}</p>
                 </div>
             ))
         }
