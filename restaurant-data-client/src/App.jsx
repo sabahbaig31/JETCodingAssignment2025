@@ -22,7 +22,9 @@ function App() {
 
     return (
         <>
-            <h1>Top 10 Restaurants</h1>
+            <header>
+                <h1>Top 10 Restaurants</h1>
+            </header>
             <div className="restaurant-container">
             {
                 restaurantData.slice(0,10).map((restaurant) => (

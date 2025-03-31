@@ -3,10 +3,27 @@ body {
   color: #242E30;
 }
 
+header {
+  background-color: #FF8000;
+  color: white;
+  width: 100vw;
+  height: 90px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 110px 2rem 2rem;
   text-align: center;
 }
 
