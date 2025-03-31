@@ -7,14 +7,27 @@
 
 .restaurant-container {
   display: grid;
-  grid-template-columns: 280px 280px;
+  grid-template-columns: 400px 400px;
   gap: 50px;
   justify-content: center;
 }
 
 .restaurant-card {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
   background-color: #EFEDEA;
   border-radius: 20px;
   box-shadow: 0 4px 9px #FF8000;
   color: #242E30;
+}
+
+.restaurant-card .restaurant-info {
+  display: grid;
+  padding: 10px;
+}
+
+.restaurant-card .restaurant-logo {
+  align-self: center;
+  padding: 10px;
 }
