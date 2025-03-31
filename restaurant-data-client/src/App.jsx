@@ -27,6 +27,7 @@ function App() {
             {
                 restaurantData.slice(0,10).map((restaurant) => (
                     <div key={restaurant.id} data-testid={'restaurant-item'} className="restaurant-card">
+                        <img src={restaurant.logoUrl} alt={restaurant.name} />
                         <p>{restaurant.name}</p>
                         <p>{restaurant.address.firstLine}, {restaurant.address.postalCode}</p>
                         <p>Cuisines: {restaurant.cuisines[0].name}, {restaurant.cuisines[1].name}</p>
