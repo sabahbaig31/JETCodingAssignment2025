@@ -31,3 +31,10 @@ A web app that fetches and displays the top 10 restaurants based on the postcode
     This will start the frontend server at **localhost:5173**  
 6. Once the backend and frontend are both running, you can access the web application by navigating to **http://localhost:5173** in your browser.  
 
+## Assumptions and Unclear Aspects
+
+* I have assumed that the API response structure remains consistent for every restaurant. If the structure changes (e.g., missing fields like cuisines or ratings), then additional error handling for this would need to be added.  
+* I have assumed that for each restaurant, only the first two cuisines are relevant. Other tags in the cuisines section such as "Low Delivery Fee" or "Deals" are ignored when displaying cuisine information.  
+* I have assumed that all restaurant data contains a valid image of the restaurant logo (logoUrl). If this is missing, then the restaurant name is displayed.  
+* I have assumed that ports 8080 (for backend) and 5173 (for frontend) are available for use.  
+
