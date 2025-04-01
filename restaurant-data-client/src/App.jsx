@@ -4,29 +4,32 @@ import axios from "axios";
 
 function App() {
 
-    const [restaurantData, setRestaurantData] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
+    const [restaurantData, setRestaurantData] = useState([]) // Store restaurant data
+    const [isLoading, setIsLoading] = useState(true) // Store loading state
 
     const fetchAPI = async () => {
         try {
             const response = await axios.get("http://localhost:8080/discovery/uk/restaurants/enriched/bypostcode/EC4M7RF")
-            setRestaurantData(response.data.restaurants)
+            setRestaurantData(response.data.restaurants) // Update with retrieved data
             console.log(response.data.restaurants)
         } catch (error) {
             console.error('Error fetching data:', error);
         } finally {
-            setIsLoading(false)
+            setIsLoading(false) // App is no longer in loading state
         }
     }
 
+    // Fetch data when the component mounts
     useEffect(() => {
         fetchAPI()
     }, []);
 
+    // Display loading screen while data is being fetched
     if (isLoading) {
         return <p className="loading-text">Fetching Data...</p>
     }
 
+    // Display first 10 restaurants' data on the webpage
     return (
         <>
             <header>
