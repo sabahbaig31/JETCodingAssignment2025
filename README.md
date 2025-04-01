@@ -38,3 +38,12 @@ A web app that fetches and displays the top 10 restaurants based on the postcode
 * I have assumed that all restaurant data contains a valid image of the restaurant logo (logoUrl). If this is missing, then the restaurant name is displayed.  
 * I have assumed that ports 8080 (for backend) and 5173 (for frontend) are available for use.  
 
+## Future Improvements
+
+* **User-Input**: Allow users to input any postcode and fetch restaurants near that location instead of using a fixed postcode.  
+* **Sorting and Filtering Options**: Implement options to sort results by different criteria, such as highest-rated restaurants first, filtering by cuisine type, or displaying restaurants closest to the user.  
+* **Dynamic Port Selection**: Instead of using fixed ports (8080 for backend and 5173 for frontend), configure the application to automatically select available ports on the user's machine.  
+* **UI and Animation Enhancements**: Improve the UI with animations and visually appealing elements to enhance user engagement.  
+* **Dedicated Homepage**: Add a separate homepage where users can enter their postcode before being redirected to the restaurant results page. This would improve the user flow and make the application more interactive.  
+* **Additional Testing**: Extend test coverage to include test cases such as missing restaurant details (e.g., no rating, no cuisines, no image) to ensure the application handles these errors properly.  
+* **Automated Backend and Frontend Startup**: Find a way to automate starting both the backend and frontend, reducing the need for the user to manually run them separately.
