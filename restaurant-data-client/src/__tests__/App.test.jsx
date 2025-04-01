@@ -7,10 +7,11 @@ import {http, HttpResponse} from "msw";
 // Set up a mock server to intercept API requests
 const server = setupServer(
     http.get("http://localhost:8080/discovery/uk/restaurants/enriched/bypostcode/EC4M7RF", () => {
-        return HttpResponse.json({ restaurants: mockRestaurants})
+        return HttpResponse.json({ restaurants: mockRestaurants}) // Return the mock data
     })
 );
 
+// Mock data to test the application with. 10 restaurants to check that 10 entries are displayed
 const mockRestaurants = [
     {
         name: "Al-Baik Pizza",
@@ -134,7 +135,7 @@ describe("App Component", () => {
 
     test("renders the web page without crashing", () => {
         render(<App/>);
-        expect(screen.getByText("Fetching Data...")).toBeInTheDocument();
+        expect(screen.getByText("Fetching Data...")).toBeInTheDocument(); // First screen upon running app is the loading screen
 
     })
 
@@ -176,7 +177,7 @@ describe("App Component", () => {
 
         await waitFor(() => {
             const restaurantDataItems = screen.getAllByTestId("restaurant-item")
-            expect(restaurantDataItems.length).toBe(10);
+            expect(restaurantDataItems.length).toBe(10); // counting how many restaurant items are displayed
         });
     });
 
